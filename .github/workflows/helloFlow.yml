@@ -1,18 +1,12 @@
 name: Hello Flow
-
-on: workflow_dispatch
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+on:
+  schedule:
+    - cron: '*/5 * * * *'  
 jobs:
-  # This workflow contains a single job called "build"
-  firs-job:
+  first-job:
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Dia Oi
-        run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: Diga Valeu
-        run: echo Valeu, Bye!
+      - name: Diga oi
+        run: echo "Hello World!
+      - name: Diga valeu
+        run: echo "Valeu - bye!"
